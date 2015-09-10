@@ -1,14 +1,16 @@
-/* Code given to use by Bojan Cukic ITCS 3146 */
+/* Code given to use by Bojan Cukic ITCS 3146
+modified by Dillon Mabry to add filewriter and print functions */
 #include <stdlib.h>
 #include <time.h>
-
-#define M 30
-#define N 30
+#include <stdio.h>
+#define M 12
+#define N 10
 
 #define POSSIBLE_ZEROS (N*N)*2/3
 
-void FieldGenerator(char [][N]);
-void printField(char[][N]);
+void FieldGenerator(char maze[M][N]);
+void printField(char maze[M][N]);
+void writeFile(char array[M][N]);
 
 main()
 {
@@ -21,11 +23,37 @@ main()
 
    FieldGenerator(field);
 
+   writeFile(field);
+
    printField(field);
+
+   return 0;
 
 }
 
-void printField(char maze[][N])
+/* Function to write to file the test case maze to a file
+user must type in filename in fopen function call */
+void writeFile(char array[M][N]) {
+    FILE *f = fopen("testcasefile.txt", "w");
+    if (f == NULL) {
+        printf("Error opening file!\n");
+        exit(1);
+    }
+	/* loop through writing out each character */
+    int i,j;
+    for (i=0; i< M; i++) {
+        for(j=0; j< N; j++) {
+            char c = array[i][j];
+            fprintf(f, "%c ", c);
+        }
+		/* new line for each next loop */
+		fputs("\n", f);
+    }
+    fclose(f);
+}
+
+/* Function to display the generated maze */
+void printField(char maze[M][N])
 {
    int x, y;
                
@@ -38,7 +66,8 @@ void printField(char maze[][N])
    }
 }
 
-void FieldGenerator(char maze[][N])
+/* Function to generate the maze */
+void FieldGenerator(char maze[M][N])
 {
    int a, x, y, entry, exit, loop;
    
