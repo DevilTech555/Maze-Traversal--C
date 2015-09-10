@@ -144,6 +144,8 @@ int canMove(char array[200][200],int x, int y) {
     }
 } 
 
+/* Function to display the desired maze size based on user input of
+rows and columns */
 void printMaze(char array[200][200], int rows, int cols) {
     int i,j;
     for (i=0; i<rows; i++)
