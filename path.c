@@ -39,40 +39,40 @@ main()
     
     /* traverse across 2D array left side, bottom, right, then top finding
     the entrance point */
-    for(j=0; i < rows-1; i++) {
-        if(field[i][j] == '0') {    
-            start_x = i;
-            start_y =j;
-            break;
-        }
-    } /* end left side traverse */
-    
-    j=1; 
-    for (i=rows-1; j<cols-1; j++){
-     if (field[i][j] == '0'){
-      start_x = i;
-      start_y = j;        
-      break;
-     }
-    } /* end bottom traverse */
-    
-    i=rows-1; 
-    for (j=cols-1; i>0; i--){
-     if (field[i][j] == '0'){
-      start_x = i;
-      start_y = j;         
-      break;
-     }
-    } /* end right side traverse */
-    
-    j=cols-1; 
-    for (i=0; j>0; j--){
-     if (field[i][j] == '0'){
-      start_x = i;
-      start_y = j; 
-      break;
-     }
-    } /* end top traverse */
+		i=rows-1; 
+	    for (j=cols-1; i>0; i--){
+	      if (field[i][j] == '0'){
+	          start_x = i;
+	          start_y = j;         
+	          break;
+	     }
+	    } /* end right side traverse */
+	
+	    j=cols-1; 
+	    for (i=0; j>0; j--){
+	        if (field[i][j] == '0'){
+	      	  start_x = i;
+	          start_y = j; 
+	          break;
+	     }
+	    } /* end top traverse */
+		
+		for(j=0; i < rows-1; i++) {
+		    if(field[i][j] == '0') {    
+		      start_x = i;
+		      start_y =j;
+		      break;
+		   }
+		 } /* end left side traverse */
+		
+		 j=1; 
+		 for (i=rows-1; j<cols-1; j++){
+		   if (field[i][j] == '0'){
+		      start_x = i;
+		      start_y = j;        
+		      break;
+		   }
+		 } /* end bottom traverse */
       
     printf("Entrance is at:[%d][%d]\n", start_x, start_y);
       
