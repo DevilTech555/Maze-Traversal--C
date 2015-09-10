@@ -1,6 +1,5 @@
 /* Dillon Mabry Student ID: 800854402 */
 #include <stdio.h>
-#include <stdbool.h>
 
 int canMove(char array[200][200],int x, int y);
 void printMaze(char array[200][200], int rows, int cols);
@@ -22,7 +21,6 @@ main()
   char file_name[20];
   int i,j;
   int start_x, start_y;
-  int exit_x, exit_y;
   
   /* begin file parsing and input ASCII file */
   printf("Type in the name of the file containing the Field\n");
@@ -86,7 +84,7 @@ main()
         printMaze(field, rows, cols);
       }
       
-      /* create counter to keep track of if the maze has an 
+	/* create counter to keep track of if the maze has an 
       entry or exit point, if the maze has both an entry and exit return 
       solution found display, else return no solution */
       int count;
