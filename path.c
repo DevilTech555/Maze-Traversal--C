@@ -1,8 +1,6 @@
 /* Dillon Mabry Student ID: 800854402 */
 #include <stdio.h>
 #include <stdbool.h>
-#define  M 12
-#define N 10
 
 int canMove(char array[200][200],int x, int y);
 void printMaze(char array[200][200], int rows, int cols);
