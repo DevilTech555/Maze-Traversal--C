@@ -9,7 +9,7 @@ Program and necessary test files to:
 * If the maze exits through the same entrance returns "Solution not found"
 
 #### Version
-1.0.0
+0.1.0
 
 ### How to Use
 * Run program and enter the desired output size by rows/columns
