@@ -137,7 +137,7 @@ int canMove(char array[200][200],int x, int y) {
         return 1;
     /* else backtrack and return false */
     } else {
-        array[x][y]=='0';
+        array[x][y]='X';
         return 0;
     }
 } 

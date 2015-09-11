@@ -4,7 +4,7 @@ modified by Dillon Mabry to add filewriter and print functions */
 #include <time.h>
 #include <stdio.h>
 #define M 12
-#define N 10
+#define N 12
 
 #define POSSIBLE_ZEROS (N*N)*2/3
 
@@ -34,7 +34,7 @@ main()
 /* Function to write to file the test case maze to a file
 user must type in filename in fopen function call */
 void writeFile(char array[M][N]) {
-    FILE *f = fopen("testcasefile.txt", "w");
+    FILE *f = fopen("testcasefile3.txt", "w");
     if (f == NULL) {
         printf("Error opening file!\n");
         exit(1);
