@@ -34,7 +34,7 @@ main()
 /* Function to write to file the test case maze to a file
 user must type in filename in fopen function call */
 void writeFile(char array[M][N]) {
-    FILE *f = fopen("testcasefile3.txt", "w");
+    FILE *f = fopen("testcasefile2.txt", "w");
     if (f == NULL) {
         printf("Error opening file!\n");
         exit(1);
