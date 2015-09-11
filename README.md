@@ -17,7 +17,10 @@ Program and necessary test files to:
 * Program displays maze output with traversed paths and whether a solution was found
 
 ### Known Glitches
-* Sometimes extremely large files (in excess of 50-75 rows/columns) might return a "No solution" with an entrance of [0][0]
+* Sometimes extremely large files (up to 200x200) might return a "No solution" with an entrance of [0][0]
+* Extensive testing has been done to large text file sizes (up to max size) and the following issue has been found:
+- If the user inputs either the maze dimensions of filename to navigate too quickly unstable results occur
+- To correctly process larger files it may be necessary to slow input down to correctly process input
 * If incorrect row/column sizes are entered corresponding to different row/column sizes in the file results may be unstable
 * Non-existing filenames will cause segfault
 

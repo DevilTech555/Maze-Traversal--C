@@ -14,7 +14,7 @@ main()
   scanf("%d",&cols);
 
   /* generate fixed 2D array size of 200x200 to display maze */
-  char field[200][200]={0};
+  char field[200][200]={1};
 
   FILE *fptr;
   char c;
