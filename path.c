@@ -16,6 +16,7 @@ main()
   /* generate fixed 2D array size of 200x200 to display maze */
   char field[200][200]={1};
 
+  /* initialize variables for traversing */
   FILE *fptr;
   char c;
   char file_name[20];
@@ -31,7 +32,7 @@ main()
         c=fgetc(fptr); 
         while ( !((c == '1')||(c =='0')) ) c=fgetc(fptr);
             field[i][j]=c;
-    } /* end maze setup and finding startX, startY locations */
+    } 
 
     fclose(fptr);
     
@@ -99,10 +100,13 @@ main()
             } else if( i==0 && field[i][j] == 'X') {
                     count+=1;
             } else {
-                    //do nothing
+                    /* do nothing */
             }
         }
     
+	/* if the counter is greater than 1 then both the entrance and exit have
+	been traversed and displayed by 'X' character, otherwise only 1 has been
+	traversed meaning there is no solution */
     if(count>1) {
         printf("Solution found!\n");
     } else {
@@ -119,10 +123,10 @@ return 1 otherwise return 0. If the path successfully exits the bounds
 of the generated 2D array (200x200) then return 1 */
 int canMove(char array[200][200],int x, int y) {
 
-    /* set symbol for traversing paths */
+    /* mark path as visited */
     array[x][y]='X';
     
-    /* for troubleshooting*/
+    /* for troubleshooting */
     // printf("x: %d | y: %d\n", x, y);
     
     /* series of checks to determine counter-clockwise if a 

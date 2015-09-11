@@ -14,17 +14,22 @@ void writeFile(char array[M][N]);
 
 main()
 {
+   /* initialize field to store maze values */
    char field[M][N];
    int loop, loop2;
-
+	
+   /* loop through setting each index to '1' */
    for (loop = 0; loop < M; loop++)
       for (loop2 = 0; loop2 < N; loop2++)
          field[loop][loop2] = '1';
 
+   /* call the field generator function to generate paths */
    FieldGenerator(field);
 
+   /* write generated field to file based on filename in function */
    writeFile(field);
 
+   /* display the field */
    printField(field);
 
    return 0;
@@ -71,7 +76,6 @@ void FieldGenerator(char maze[M][N])
 {
    int a, x, y, entry, exit, loop;
    
-      
    srandom(time(NULL));
 
    do {
@@ -80,7 +84,6 @@ void FieldGenerator(char maze[M][N])
    } while (entry == exit);
 
    /* Determine entry position */
-      
    if (entry == 0) {
       x = 1 + random() % (M-2);    /* avoid corners */
       y = 0;
@@ -103,7 +106,6 @@ void FieldGenerator(char maze[M][N])
    }
       
    /* Determine exit location */
-   
    if (exit == 0) {
       a = 1 + random() % (M-2);
       maze[a][0] = '0';
