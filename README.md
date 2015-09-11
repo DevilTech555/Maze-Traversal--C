@@ -18,10 +18,6 @@ Program and necessary test files to:
 * To generate random mazes to traverse simply change the defined M and N values in fieldgenerator.c and the desired filename output in the writeFile() function
 
 ### Known Glitches
-* Sometimes extremely large files (up to 200x200) might return a "No solution" with an entrance of [0][0]
-* Extensive testing has been done to large text file sizes (up to max size) and the following issue has been found:
-*If the user inputs either the maze dimensions or filename to navigate too quickly unstable results occur.*
-*To correctly process larger files it may be necessary to slow input down to correctly process input*
 * If incorrect row/column sizes are entered corresponding to different row/column sizes in the file results may be unstable
 * Non-existing filenames will cause segfault
 
