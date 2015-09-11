@@ -5,8 +5,8 @@ Program and necessary test files to:
 * Accept ASCII text file to use as a test case for maze with 0s being open paths and 1s being walls
 * Traverse through maze recursively with an array size limit of 200x200
 * Display size generated in previous step and whether or not a solution was found
-* If the maze finds an exit returns "Solution found" 
-* If the maze exits through the same entrance returns "Solution not found"
+* If the maze finds an exit returns "Solution found!" 
+* If the maze exits through the same entrance returns "No solution!"
 
 #### Version
 0.2.0
